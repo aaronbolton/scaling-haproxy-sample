@@ -1,0 +1,16 @@
+version: "2"
+services:
+  haproxy:
+    image: eeacms/haproxy
+    ports:
+    - "80:5000" # Load Balanced Service Port
+    - "1936:1936" # Stats Port
+    environment:
+      BACKENDS: "myip"
+      DNS_ENABLED: "true"
+      LOG_LEVEL: "info"
+      
+  myip:
+    deploy:
+      replicas: 2 # Number of initial backend servers
+    image: aaronbolton78/myip
