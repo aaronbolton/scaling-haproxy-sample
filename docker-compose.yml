@@ -13,4 +13,4 @@ services:
   myip:
     deploy:
       replicas: 2 # Number of initial backend servers
-    image: aaronbolton78/myip
+    image: aaronbolton78/myipfull
